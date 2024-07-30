@@ -1,5 +1,5 @@
 variable "region" {
-  default     = "eu-west-1"
+  default     = "eu-west-2"
   description = "The AWS region where the services would be deployed"
   type        = string
 }
@@ -16,7 +16,3 @@ variable "data_protection_audit_log_group_name" {
   default     = "DataProtectionAuditReportLogGroup"
 }
 
-variable "aws_account_id" {
-  description = "The AWS account id where the service would be deployed"
-  type        = number
-}

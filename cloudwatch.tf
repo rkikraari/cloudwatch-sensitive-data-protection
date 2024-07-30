@@ -2,14 +2,14 @@ resource "aws_cloudwatch_log_group" "data_protection_lambda_log_group" {
   name              = "/aws/lambda/${var.data_protection_lambda_name}"
   log_group_class   = "STANDARD"
   retention_in_days = 365
-  kms_key_id        = aws_kms_key.cloudwatch_kms_key.id
+  kms_key_id        = aws_kms_key.cloudwatch_kms_key.arn
 }
 
 resource "aws_cloudwatch_log_group" "data_protection_audit_log_group" {
   name              = "/aws/${var.data_protection_audit_log_group_name}"
   log_group_class   = "STANDARD"
   retention_in_days = 365
-  kms_key_id        = aws_kms_key.cloudwatch_kms_key.id
+  kms_key_id        = aws_kms_key.cloudwatch_kms_key.arn
 }
 
 resource "aws_cloudwatch_log_data_protection_policy" "data_protection_cloudwatch_policy" {
