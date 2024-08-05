@@ -1,6 +1,5 @@
 module "lambda" {
-  source  = "terraform-aws-modules/lambda/aws"
-  version = "7.7.0"
+  source = "git::https://github.com/terraform-aws-modules/terraform-aws-lambda.git?ref=b88a856"
 
   depends_on = [aws_cloudwatch_log_group.data_protection_lambda_log_group]
 

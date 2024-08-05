@@ -22,7 +22,7 @@ resource "aws_cloudwatch_log_data_protection_policy" "data_protection_cloudwatch
     Statement = [
       {
         Sid            = "Audit"
-        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/NhsNumber-GB", "arn:aws:dataprotection::aws:data-identifier/Address"]
+        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/EmailAddress", "arn:aws:dataprotection::aws:data-identifier/Address"]
         Operation = {
           Audit = {
             FindingsDestination = {
@@ -35,7 +35,7 @@ resource "aws_cloudwatch_log_data_protection_policy" "data_protection_cloudwatch
       },
       {
         Sid            = "Redact"
-        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/NhsNumber-GB", "arn:aws:dataprotection::aws:data-identifier/Address"]
+        DataIdentifier = ["arn:aws:dataprotection::aws:data-identifier/EmailAddress", "arn:aws:dataprotection::aws:data-identifier/Address"]
         Operation = {
           Deidentify = {
             MaskConfig = {}
